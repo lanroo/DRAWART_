@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Links -->
+    <link rel="stylesheet" href="./paint.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,900&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+
+    <!-- Scripts -->
+        <script type="text/javascript" src="/test/wp-content/themes/child/script/jquery.jcarousel.min.js"></script>
+        <script src="https://unpkg.com/@omiu/color-picker"></script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-217417566-1"></script>
+
+    <title>Paint Online - Desenho</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="wrapper">
+            <div class="content">
+                <img src="./assets/logo.png" class="logo" />
+                <div class="right-thi">
+                    <div class="btns-nav">
+                        <div data-command="undo" title="Desfazer" class="btn-nav undo">
+                            <img src="assets/return1.svg" />
+                        </div>
+                        <div data-command="delete" class="btn-nav delete">
+                            <img src="assets/delete.svg" />
+                        </div>
+                    </div>
+                    <pre><button data-command="download" title="Download" class="btn-download" ><img src="assets/down-icon.svg">  Baixar Imagem</button> </pre>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+        <div class="container">
+            <div class="content canvas-content">
+                <!-- Canvas -->
+
+                <canvas id="canvas" width="1000px" height="480px"></canvas>
+            </div>
+            <div class="content">
+                <div class="top-tools">
+                    <!-- LineWidths -->
+                    <div class="linewidths">
+                        <div class="item active" id="lw" data-line-width="3" title="3 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-line-width="6" title="6 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-line-width="9" title="9 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-line-width="11" title="11 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-line-width="14" title="14 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-line-width="18" title="18 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                    </div>
+
+                    <!-- BrushWidths -->
+                    <div class="brushwidths">
+                        <div class="item active" data-brush-size="5" title="5 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-brush-size="10" title="10 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-brush-size="15" title="15 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-brush-size="20" title="20 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-brush-size="25" title="25 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                        <div class="item" id="lw" data-brush-size="30" title="30 Pixel">
+                            <div class="linewidth"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="wrp-item item" data-tool="rectangle" title="Retângulo">
+                        <img src="assets/rectangle.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item" data-tool="circle" title="Círculo">
+                        <img src="assets/circle.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item" data-tool="triangle" title="Triângulo">
+                        <img src="assets/triangle.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item active" data-tool="line" title="Linha">
+                        <img src="assets/line.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item" data-tool="star" title="Estrela">
+                        <img src="assets/star.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item" data-tool="text" title="Texto">
+                        <img src="assets/text.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item" data-tool="eraser" title="Borracha">
+                        <img src="assets/eraser.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item" data-tool="paint-bucket" title="Balde de tinta">
+                        <img src="assets/paint-bucket.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item" data-tool="pencil" title="Lápis">
+                        <img src="assets/pencil.svg" class="tool-img" />
+                    </div>
+                    <div class="wrp-item item" data-tool="brush" title="Pincel">
+                        <img src="assets/brush.svg" class="tool-img" />
+                    </div>
+                </div>
+
+                <!-- Colors -->
+                <div class="bottom-colors">
+                    <div class="item active" data-color="#000000"></div>
+                    <div class="item" data-color="#6D7278"></div>
+                    <div class="item" data-color="#B620E0"></div>
+                    <div class="item" data-color="#6236FF"></div>
+                    <div class="item" data-color="#0091FF"></div>
+                    <div class="item" data-color="#32C5FF"></div>
+                    <div class="item" data-color="#6DD400"></div>
+                    <div class="item" data-color="#F7B500"></div>
+                    <div class="item" data-color="#FA6400"></div>
+                    <div class="item" data-color="#E02020"></div>
+                    <div class="item" data-color="#FFFFFF"></div>
+                    <div class="item" id="picker" data-color="">
+                        <!-- Color Picker   -->
+                        <div class="wrp-picker">
+                            <div class="pickshell">
+                                <div class="picker" data-hsv="180,60,78">
+                                    <div class="board">
+                                        <div class="choice"></div>
+                                    </div>
+                                    <div class="rainbow"></div>
+                                    <a href="#change" class="icon change"></a>
+                                    <input type="text" class="change" name="change" value="" />
+
+                                    <button id="setColor">Add</button>
+                                    <div class="triangle-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="developer">
+        <span>Project by <a href="https://github.com/lanroo" target="" title="GitHub da desenvolvedora">Lanna Almeida </a> © 2022</span>
+    </div>
+
+    </footer>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3434038480223364" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+
+    <script type="text/javascript"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/picker.js"></script>
+</body>
+
+</html>
