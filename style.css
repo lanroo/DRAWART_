@@ -88,8 +88,8 @@
     #canvas {
         background-color: white;
         border-radius: 7px;
-        width: 70vw;
-        height: 31vw;
+        width: 70vw!important;
+        height: 31vw!important;
     }
     
     #main .container {
