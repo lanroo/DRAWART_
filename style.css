@@ -79,23 +79,23 @@
     /* Main */
     
     #main {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        height: 68vh;
+       display: flex;
+       height: 62vh;
+       justify-content: flex-start;
+       margin-left: 10vw;
     }
     
     #canvas {
         background-color: white;
         border-radius: 7px;
-        width: 1000px;
-        height: 480px;
+        width: 1338px;
+        height: 604px;
     }
     
     #main .container {
         display: flex;
-        align-items: center;
-        justify-content: center;
+       justify-content: center;
+       margin-left: 14px;
     }
     
     #main .content:nth-child(2) {
