@@ -551,3 +551,33 @@ picker.addEventListener('click', () => {
 canvas.addEventListener('click', () => {
     wrp_setPicker.classList.remove('showBoard')
 })
+
+document.querySelectorAll('[data-command]').forEach(item => {
+    item.addEventListener('click', e => {
+        var command = item.getAttribute('data-command');
+        if (command === 'undo') {
+            paint.undoPaint();
+        } else if (command === 'delete') {
+            ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        } else if (command === 'download') {
+            var canvas = document.getElementById('canvas');
+            var image = canvas.toDataURL('image/png', 1.0).replace('image/png', 'image/octet-stream');
+            var link = document.createElement('a');
+            link.download = 'image.jpg';
+            link.href = image;
+            link.click();
+        } else if (command === 'share') {
+            var canvas = document.getElementById('canvas');
+            canvas.toBlob(function(blob) {
+                var file = new File([blob], "image.png", { type: "image/png" });
+                var data = { files: [file] };
+                navigator.share(data).then(() => {
+                    console.log('Compartilhado com sucesso!');
+                }).catch((error) => {
+                    console.error('Erro ao compartilhar:', error);
+                });
+            });
+        }
+    });
+});
+

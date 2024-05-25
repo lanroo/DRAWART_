@@ -65,9 +65,10 @@
     
     nav .btn-nav img {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 43%;
+        left: 37%;
+        transform: translate(-24%, -39%);
+        width: 25px;
     }
     
     .btns-nav {
@@ -102,7 +103,6 @@
         margin-left: 20px;
       }
       
-    /********************* Tools ***************/
     
     #main .container .top-tools {
         position: relative;
@@ -593,6 +593,19 @@
             transform: scale(0.5);
         }
     }
+
+    .nav .btn-nav.share {
+        padding: 10px 27px;
+        background-color: white;
+        margin-left: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        -webkit-box-shadow: 6px 20px 60px -12px rgba(57, 63, 120, 1);
+        -moz-box-shadow: 6px 20px 60px -12px rgba(57, 63, 120, 1);
+        box-shadow: 6px 20px 60px -12px rgba(57, 63, 120, 1);
+    }
+    
+    
     
     @keyframes scale {
         0% {
