@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-gray-50 via-indigo-50/30 to-purple-50/20;
+    font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+    @apply text-gray-900 antialiased;
+  }
+  
+  button {
+    @apply focus:outline-none;
+  }
+  
+          button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+          }
+          
+          /* Slider Styles */
+          .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #6366f1;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s;
+          }
+          
+          .slider::-webkit-slider-thumb:hover {
+            background: #4f46e5;
+            transform: scale(1.1);
+          }
+          
+          .slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #6366f1;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s;
+          }
+          
+          .slider::-moz-range-thumb:hover {
+            background: #4f46e5;
+            transform: scale(1.1);
+          }
+        }
+
+@layer components {
+  /* Color Picker Board gradients */
+  .color-picker-board::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 8px;
+  }
+  
+  .color-picker-board::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    border-radius: 8px;
+  }
+  
+  /* Rainbow gradient for color picker */
+  .color-picker-rainbow {
+    background: linear-gradient(
+      to top,
+      #ff3232 0%,
+      #ff9900 10%,
+      #ffff00 17%,
+      #ccff00 20%,
+      #32ff00 30%,
+      #00ff65 40%,
+      #00ffff 50%,
+      #0065ff 60%,
+      #3300ff 70%,
+      #cb00ff 81%,
+      #ff0098 90%,
+      #ff0004 100%
+    );
+  }
+}
+
+@layer utilities {
+  .linewidth-3 {
+    width: 3px;
+    height: 3px;
+  }
+  
+  .linewidth-6 {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .linewidth-9 {
+    width: 9px;
+    height: 9px;
+  }
+  
+  .linewidth-11 {
+    width: 11px;
+    height: 11px;
+  }
+  
+  .linewidth-14 {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .linewidth-18 {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .brushwidth-5 {
+    width: 5px;
+    height: 5px;
+  }
+  
+  .brushwidth-10 {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .brushwidth-15 {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .brushwidth-20 {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .brushwidth-25 {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .brushwidth-30 {
+    width: 30px;
+    height: 30px;
+  }
+}
+
